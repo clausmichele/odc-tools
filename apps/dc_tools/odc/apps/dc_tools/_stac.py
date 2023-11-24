@@ -215,7 +215,8 @@ def _get_stac_bands(
         return str(path)
 
     for asset_name, asset in assets.items():
-        image_types = ["jp2", "geotiff"]
+        # image_types = ["jp2", "geotiff"] # Don't index JPEG2000 files
+        image_types = ["geotiff"]
         # If something's not in image_types, make it an accessory
         # include thumbnails in accessories
         if not any(
